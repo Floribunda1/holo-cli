@@ -1,3 +1,5 @@
-class PromptManager {}
+class PromptManager {
+  constructor() {}
+}
 
 module.exports = PromptManager;

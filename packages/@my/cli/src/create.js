@@ -2,14 +2,16 @@ const path = require('path');
 const fs = require('fs-extra');
 const chalk = require('chalk');
 const inquirer = require('inquirer');
+const { clearConsole } = require('@my/utils');
 
-const PromptManager = require('./prompt-manager')
+const PromptManager = require('./prompt-manager');
 
 const internalModules = ['babel', 'eslint', 'webpack'];
 
 const createProject = async (name) => {
   const targetDirectory = path.join(process.cwd(), name);
   if (fs.existsSync(targetDirectory)) {
+    clearConsole();
     const { shouldRemoveDir } = await inquirer.prompt([
       {
         type: 'confirm',
@@ -27,14 +29,15 @@ const createProject = async (name) => {
     await fs.remove(targetDirectory);
   }
 
+  clearConsole();
   const promptManager = new PromptManager();
 
-  const modules = getInternalModules();
-  modules.forEach((m) => m(promptManager));
+  // const modules = getInternalModules();
+  // modules.forEach((m) => m(promptManager));
 
-  const answers = await inquirer.prompt(prompts);
+  // const answers = await inquirer.prompt(prompts);
 
-  console.log(answers);
+  // console.log(answers);
 };
 
 const getInternalModules = () => {
