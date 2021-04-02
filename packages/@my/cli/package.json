@@ -13,10 +13,13 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@my/cli-plugin-babel": "^1.0.0",
     "@my/utils": "^1.0.0",
     "chalk": "^4.1.0",
     "commander": "^7.2.0",
+    "ejs": "^3.1.6",
     "fs-extra": "^9.1.0",
+    "globby": "^11.0.3",
     "inquirer": "^8.0.0"
   }
 }

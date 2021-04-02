@@ -3,5 +3,6 @@
     "packages/@my/*"
   ],
   "version": "1.0.0",
-  "useWorkspaces": true
+  "useWorkspaces": true,
+  "npmClient": "yarn"
 }

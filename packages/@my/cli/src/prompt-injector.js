@@ -3,7 +3,13 @@ class PromptInjector {
     this.promptManager = promptManager;
   }
 
-  injectFeature() {}
+  injectFeature(feature) {
+    this.promptManager.featurePrompt.choices.push(feature);
+  }
 
-  injectPrompts() {}
+  injectPrompt(prompt) {
+    this.promptManager.injectedPrompts.push(prompt);
+  }
 }
+
+module.exports = PromptInjector
