@@ -30,6 +30,8 @@ packages.forEach((package) => {
 		? `${package.replace('cli-plugin-', '')} plugin for cli`
 		: `${package} for cli`;
 
+	const getFilePath = (file) => path.join(dir, package, file);
+
 	const packageJson = {
 		name: `@my/${package}`,
 		version,
@@ -43,11 +45,15 @@ packages.forEach((package) => {
 		license: 'MIT',
 	};
 
-	const filePath = path.join(dir, package, 'package.json');
-
-	if (fs.existsSync(filePath)) {
-		mergeOptions(require(filePath), packageJson);
+	const packageJsonPath = getFilePath('package.json');
+	if (fs.existsSync(packageJsonPath)) {
+		mergeOptions(require(packageJsonPath), packageJson);
 	} else {
-		fs.writeFileSync(filePath, JSON.stringify(packageJson, null, 2));
+		fs.writeFileSync(packageJsonPath, JSON.stringify(packageJson, null, 2));
+	}
+
+	const readmePath = getFilePath('README.md');
+	if (!fs.existsSync(readmePath)) {
+		fs.writeFileSync(readmePath, `## ${description}`);
 	}
 });

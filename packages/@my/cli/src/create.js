@@ -3,6 +3,7 @@ const fs = require('fs');
 const chalk = require('chalk');
 const inquirer = require('inquirer');
 const { clearConsole } = require('@my/utils');
+const execa = require('execa');
 
 const PromptManager = require('./prompt-manager');
 const PromptInjector = require('./prompt-injector');
@@ -69,6 +70,10 @@ const createProject = async (name) => {
 	});
 
 	await generator.generate();
+
+	await execa('git', ['init'], {
+		cwd: targetDirectory,
+	});
 
 	const packageManager = new PackageManager(
 		targetDirectory,
