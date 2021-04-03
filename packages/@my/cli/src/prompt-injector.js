@@ -1,15 +1,15 @@
 class PromptInjector {
-  constructor(promptManager) {
-    this.promptManager = promptManager;
-  }
+	constructor(promptManager) {
+		this.promptManager = promptManager;
+	}
 
-  injectFeature(feature) {
-    this.promptManager.featurePrompt.choices.push(feature);
-  }
+	injectFeature(feature) {
+		this.promptManager.featurePrompt.choices.push(feature);
+	}
 
-  injectPrompt(prompt) {
-    this.promptManager.injectedPrompts.push(prompt);
-  }
+	injectPrompt(prompt) {
+		this.promptManager.injectedPrompts.push(prompt);
+	}
 }
 
-module.exports = PromptInjector
+module.exports = PromptInjector;
