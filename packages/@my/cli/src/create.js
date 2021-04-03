@@ -7,6 +7,7 @@ const { clearConsole } = require('@my/utils');
 const PromptManager = require('./prompt-manager');
 const PromptInjector = require('./prompt-injector');
 const Generator = require('./generator');
+const PackageManager = require('./package-manager');
 
 const internalModules = [
 	'babel',
@@ -69,8 +70,18 @@ const createProject = async (name) => {
 
 	await generator.generate();
 
-	if (answers.shouldDownloadDependency) {
-	}
+	const packageManager = new PackageManager(
+		targetDirectory,
+		answers.packageManager
+	);
+
+	await packageManager.install();
+
+	// clearConsole()
+
+	console.log('依赖下载完成');
+	console.log(`  cd ${chalk.cyan(name)}`);
+	console.log(`  ${chalk.cyan(answers.packageManager)} run dev`);
 };
 
 const getInternalModules = () => {
