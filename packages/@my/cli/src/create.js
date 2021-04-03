@@ -19,7 +19,7 @@ const createProject = async (name) => {
       {
         type: "confirm",
         name: "shouldRemoveDir",
-        message: "Target directory already exists, remove it?",
+        message: "⛳ 目标文件夹已经存在，是否移除?",
         default: false,
       },
     ]);
@@ -28,11 +28,14 @@ const createProject = async (name) => {
       return;
     }
 
-    console.log(`/n Removing ${chalk.cyan(targetDirectory)} ...`);
-    await fs.remove(targetDirectory);
+    console.log(`🎏 移除 ${chalk.cyan(targetDirectory)} 中...`);
+    await fs.rmSync(targetDirectory, {
+      recursive: true,
+    });
+    console.log(`🎍 ${chalk.cyan(targetDirectory)} 移除完成...`);
   }
-
   clearConsole();
+
   // 管理命令行交互
   const promptManager = new PromptManager();
   // 向管理注入新的命令

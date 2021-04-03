@@ -1,9 +1,9 @@
-const { mergeOptions } = require('@my/utils');
-const globby = require('globby');
-const path = require('path');
-const fs = require('fs');
-const ejs = require('ejs');
-const chalk = require('chalk');
+const { mergeOptions } = require("@my/utils");
+const globby = require("globby");
+const path = require("path");
+const fs = require("fs");
+const ejs = require("ejs");
+const chalk = require("chalk");
 
 class Generator {
   constructor(pkg, directory) {
@@ -14,13 +14,13 @@ class Generator {
     this.context = path.join(process.cwd(), this.pkg.name);
   }
 
-  // 让插件注入文件，由于渲染是异步操作，因此最好放在一个地方统一处理掉
+  // 让插件注入文件，由于匹配路径是异步操作，因此最好放在一个地方统一处理掉，所以这里面为添加函数
   injectFile(source, data = {}) {
     const dir = getFunctionCalledDir();
     source = path.resolve(dir, source);
     this.fileInjectFunctions.push(async () => {
       // 匹配路径对应下的文件
-      const sourceFilesPath = await globby(['**/*'], {
+      const sourceFilesPath = await globby(["**/*"], {
         cwd: source,
         dot: true,
       });
@@ -33,7 +33,7 @@ class Generator {
   }
 
   renderFile(path, data) {
-    const template = fs.readFileSync(path, 'utf-8');
+    const template = fs.readFileSync(path, "utf-8");
     return ejs.render(template, data);
   }
 
@@ -41,7 +41,7 @@ class Generator {
     for (const func of this.fileInjectFunctions) {
       await func();
     }
-    this.files['package.json'] = JSON.stringify(this.pkg, null, 2) + '\n';
+    this.files["package.json"] = JSON.stringify(this.pkg, null, 2) + "\n";
 
     // 创建项目文件夹
     fs.mkdirSync(this.pkg.name);
@@ -57,12 +57,12 @@ class Generator {
 }
 
 function writeFilesToDir(files, context) {
-  console.log('🦧 创建文件中...');
+  console.log("🦧 创建文件中...");
   Object.keys(files).forEach((relativePath) => {
     const dirName = path.dirname(relativePath);
     const fullPath = path.resolve(context, relativePath);
     // 如果有嵌套目录如: foo/bar/baz, 需要递归创建文件夹
-    dirName.split('/').reduce((acc, d) => {
+    dirName.split("/").reduce((acc, d) => {
       const temp = path.join(acc, d);
       if (!fs.existsSync(temp)) {
         fs.mkdirSync(temp);
@@ -71,7 +71,7 @@ function writeFilesToDir(files, context) {
     }, context);
     fs.writeFileSync(fullPath, files[relativePath]);
   });
-  console.log('🐒 文件创建完啦...');
+  console.log("🐒 文件创建完啦...");
 }
 
 /**
@@ -91,7 +91,7 @@ function getFunctionCalledDir() {
    *  at createProject (E:\my-cli\packages\@my\cli\src\create.js:54:19)
    *  at processTicksAndRejections (internal/process/task_queues.js:93:5)
    */
-  const stackInfo = obj.stack.split('\n');
+  const stackInfo = obj.stack.split("\n");
   // 用来匹配路径
   const pathReg = /at\s(?:\w+\.\w+\s)\((.+)(\:\d+){2}\)/;
 
