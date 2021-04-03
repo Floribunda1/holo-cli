@@ -1,9 +1,12 @@
 {
-  "name": "root",
+  "name": "my-cli",
+  "version": "1.0.0",
   "private": true,
   "workspaces": [
     "packages/@my/*"
   ],
+  "scripts": {
+  },
   "devDependencies": {
     "@commitlint/cli": "^12.0.1",
     "@commitlint/config-conventional": "^12.0.1",

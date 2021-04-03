@@ -1,2 +1,2 @@
 #!/bin/sh
-npm install lint-staged husky --save-dev
+npx --no-install lint-staged

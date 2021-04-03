@@ -1494,11 +1494,6 @@ commander@^6.2.0:
   resolved "https://registry.npm.taobao.org/commander/download/commander-6.2.1.tgz?cache=0&sync_timestamp=1616364009866&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Fcommander%2Fdownload%2Fcommander-6.2.1.tgz#0792eb682dfbc325999bb2b84fddddba110ac73c"
   integrity sha1-B5LraC37wyWZm7K4T93duhEKxzw=
 
-commander@^7.2.0:
-  version "7.2.0"
-  resolved "https://registry.npm.taobao.org/commander/download/commander-7.2.0.tgz?cache=0&sync_timestamp=1616364009866&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Fcommander%2Fdownload%2Fcommander-7.2.0.tgz#a36cb57d0b501ce108e4d20559a150a391d97ab7"
-  integrity sha1-o2y1fQtQHOEI5NIFWaFQo5HZerc=
-
 compare-func@^2.0.0:
   version "2.0.0"
   resolved "https://registry.npm.taobao.org/compare-func/download/compare-func-2.0.0.tgz#fb65e75edbddfd2e568554e8b5b05fff7a51fcb3"
@@ -1801,7 +1796,7 @@ ecc-jsbn@~0.1.1:
 
 ejs@^3.1.6:
   version "3.1.6"
-  resolved "https://registry.npm.taobao.org/ejs/download/ejs-3.1.6.tgz?cache=0&sync_timestamp=1612643435705&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Fejs%2Fdownload%2Fejs-3.1.6.tgz#5bfd0a0689743bb5268b3550cceeebbc1702822a"
+  resolved "https://registry.npm.taobao.org/ejs/download/ejs-3.1.6.tgz#5bfd0a0689743bb5268b3550cceeebbc1702822a"
   integrity sha1-W/0KBol0O7UmizVQzO7rvBcCgio=
   dependencies:
     jake "^10.6.1"
@@ -1992,7 +1987,7 @@ figures@^3.0.0, figures@^3.2.0:
 
 filelist@^1.0.1:
   version "1.0.2"
-  resolved "https://registry.npm.taobao.org/filelist/download/filelist-1.0.2.tgz?cache=0&sync_timestamp=1612641447730&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Ffilelist%2Fdownload%2Ffilelist-1.0.2.tgz#80202f21462d4d1c2e214119b1807c1bc0380e5b"
+  resolved "https://registry.npm.taobao.org/filelist/download/filelist-1.0.2.tgz#80202f21462d4d1c2e214119b1807c1bc0380e5b"
   integrity sha1-gCAvIUYtTRwuIUEZsYB8G8A4Dls=
   dependencies:
     minimatch "^3.0.4"

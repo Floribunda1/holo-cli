@@ -1,14 +1,14 @@
-const path = require('path');
-const fs = require('fs-extra');
-const chalk = require('chalk');
-const inquirer = require('inquirer');
-const { clearConsole } = require('@my/utils');
+const path = require("path");
+const fs = require("fs");
+const chalk = require("chalk");
+const inquirer = require("inquirer");
+const { clearConsole } = require("@my/utils");
 
-const PromptManager = require('./prompt-manager');
-const PromptInjector = require('./prompt-injector');
-const Generator = require('./generator');
+const PromptManager = require("./prompt-manager");
+const PromptInjector = require("./prompt-injector");
+const Generator = require("./generator");
 
-const internalModules = ['babel'];
+const internalModules = ["babel"];
 
 const createProject = async (name) => {
   const targetDirectory = path.join(process.cwd(), name);
@@ -17,9 +17,9 @@ const createProject = async (name) => {
 
     const { shouldRemoveDir } = await inquirer.prompt([
       {
-        type: 'confirm',
-        name: 'shouldRemoveDir',
-        message: 'Target directory already exists, remove it?',
+        type: "confirm",
+        name: "shouldRemoveDir",
+        message: "Target directory already exists, remove it?",
         default: false,
       },
     ]);
@@ -46,7 +46,7 @@ const createProject = async (name) => {
 
   const packageJson = {
     name,
-    version: '0.1.0',
+    version: "0.1.0",
     dependencies: {},
     devDependencies: {},
   };
