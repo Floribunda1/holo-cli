@@ -14,7 +14,6 @@
   "dependencies": {
     "@my/cli-plugin-commitlint": "^1.0.0",
     "@my/cli-plugin-eslint": "^1.0.0",
-    "@my/cli-plugin-typescript": "^1.0.0",
     "@my/cli-plugin-webpack": "^1.0.0",
     "@my/utils": "^1.0.0",
     "chalk": "^4.1.0",

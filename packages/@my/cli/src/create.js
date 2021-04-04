@@ -10,13 +10,7 @@ const PromptInjector = require('./prompt-injector');
 const Generator = require('./generator');
 const PackageManager = require('./package-manager');
 
-const internalModules = [
-	'babel',
-	'webpack',
-	'commitlint',
-	'typescript',
-	'eslint',
-];
+const internalModules = ['babel', 'webpack', 'commitlint', 'eslint'];
 
 const createProject = async (name) => {
 	const targetDirectory = path.join(process.cwd(), name);
@@ -37,7 +31,7 @@ const createProject = async (name) => {
 		}
 
 		console.log(`🎏 移除 ${chalk.cyan(targetDirectory)} 中...`);
-		await fs.rmSync(targetDirectory, {
+		await fs.rmdirSync(targetDirectory, {
 			recursive: true,
 		});
 		console.log(`🎍 ${chalk.cyan(targetDirectory)} 移除完成...`);
@@ -58,6 +52,7 @@ const createProject = async (name) => {
 	const packageJson = {
 		name,
 		version: '0.1.0',
+		scripts: {},
 		dependencies: {},
 		devDependencies: {},
 	};

@@ -1,0 +1,18 @@
+{
+  "parserOptions": {
+    <%_ if (hasBabel) { -%>
+    "parser": "@babel/eslint-parser",
+    <%_ } _%>
+    "sourceType": "module",
+    "ecmaVersion": 2021
+  },
+  "env": {
+    "browser": true,
+    "es2021": true
+  },
+  "extends": [<%_ if (lintRule !== 'none') { _%>
+<%- JSON.stringify(lintRule) _%>
+    <%_ } _%>
+    <%_ if (lintWithPrettier) { _%>
+, "prettier"<%_ } _%>]
+}

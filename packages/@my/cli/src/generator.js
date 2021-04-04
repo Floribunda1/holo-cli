@@ -34,6 +34,7 @@ class Generator {
 
 	renderFile(path, data) {
 		const template = fs.readFileSync(path, 'utf-8');
+		// console.log(template)
 		return ejs.render(template, data);
 	}
 
@@ -42,9 +43,13 @@ class Generator {
 			await func();
 		}
 		this.files['package.json'] = JSON.stringify(this.pkg, null, 2) + '\n';
-
-		// 创建项目文件夹
-		fs.mkdirSync(this.pkg.name);
+		try {
+			// 创建项目文件夹
+			fs.mkdirSync(this.pkg.name);
+		} catch {
+			console.log(chalk.red('移除文件夹失败，可能有程序正在占用这个文件夹'));
+			process.exit();
+		}
 
 		// 将项目中的文件写入
 		writeFilesToDir(this.files, this.context);
