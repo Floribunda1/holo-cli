@@ -1,4 +1,4 @@
-const { mergeOptions } = require('@my/utils');
+const { mergeOptions } = require('@holo/utils');
 const globby = require('globby');
 const path = require('path');
 const fs = require('fs');
@@ -88,12 +88,12 @@ function getFunctionCalledDir() {
 	/*
 	 * stackInfo 错误信息类似于下面这样
 	 * Error
-	 *  at getFunctionCalledDir (E:\my-cli\packages\@my\cli\src\generator.js:36:9)
-	 *  at Generator.injectFile (E:\my-cli\packages\@my\cli\src\generator.js:14:5)
-	 *  at module.exports (E:\my-cli\packages\@my\cli-plugin-babel\generator\index.js:2:7)
-	 *  at E:\my-cli\packages\@my\cli\src\create.js:56:5
+	 *  at getFunctionCalledDir (E:\my-cli\packages\@holo\cli\src\generator.js:36:9)
+	 *  at Generator.injectFile (E:\my-cli\packages\@holo\cli\src\generator.js:14:5)
+	 *  at module.exports (E:\my-cli\packages\@holo\cli-plugin-babel\generator\index.js:2:7)
+	 *  at E:\my-cli\packages\@holo\cli\src\create.js:56:5
 	 *  at Array.forEach (<anonymous>)
-	 *  at createProject (E:\my-cli\packages\@my\cli\src\create.js:54:19)
+	 *  at createProject (E:\my-cli\packages\@holo\cli\src\create.js:54:19)
 	 *  at processTicksAndRejections (internal/process/task_queues.js:93:5)
 	 */
 	const stackInfo = obj.stack.split('\n');

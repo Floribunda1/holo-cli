@@ -1,7 +1,7 @@
 {
-  "name": "@my/cli-plugin-webpack",
+  "name": "@holo/utils",
   "version": "1.0.0",
-  "description": "webpack plugin for cli",
+  "description": "utils for cli",
   "main": "index.js",
   "repository": {
     "type": "git",

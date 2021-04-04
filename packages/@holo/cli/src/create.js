@@ -2,7 +2,7 @@ const path = require('path');
 const fs = require('fs');
 const chalk = require('chalk');
 const inquirer = require('inquirer');
-const { clearConsole } = require('@my/utils');
+const { clearConsole } = require('@holo/utils');
 const execa = require('execa');
 
 const PromptManager = require('./prompt-manager');
@@ -60,7 +60,7 @@ const createProject = async (name) => {
 	const generator = new Generator(packageJson, targetDirectory);
 
 	answers.features.forEach((f) => {
-		const pluginInjector = require(`@my/cli-plugin-${f}/generator`);
+		const pluginInjector = require(`@holo/cli-plugin-${f}/generator`);
 		pluginInjector(generator, answers);
 	});
 

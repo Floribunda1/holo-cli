@@ -9,7 +9,7 @@
       "request": "launch",
       "name": "cli create command",
       "skipFiles": ["<node_internals>/**"],
-      "program": "${workspaceFolder}\\packages\\@my\\cli\\bin\\ka.js",
+      "program": "${workspaceFolder}\\packages\\@holo\\cli\\bin\\ka.js",
       // "cwd": "${workspaceFolder}\\test",
       "args": ["create", "vscode"]
     }

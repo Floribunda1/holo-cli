@@ -1,9 +1,9 @@
-// 用来生成 packages/@my 下面每个包的 package.json 等文件
+// 用来生成 packages/@holo 下面每个包的 package.json 等文件
 const fs = require('fs');
 const path = require('path');
 
 const version = require('../package.json').version;
-const dir = path.resolve(__dirname, '../packages/@my');
+const dir = path.resolve(__dirname, '../packages/@holo');
 const packages = fs.readdirSync(dir);
 
 const mergeOptions = (target, obj) => {
@@ -33,7 +33,7 @@ packages.forEach((package) => {
 	const getFilePath = (file) => path.join(dir, package, file);
 
 	const packageJson = {
-		name: `@my/${package}`,
+		name: `@holo/${package}`,
 		version,
 		description,
 		main: 'index.js',
@@ -46,9 +46,7 @@ packages.forEach((package) => {
 	};
 
 	const packageJsonPath = getFilePath('package.json');
-	if (fs.existsSync(packageJsonPath)) {
-		mergeOptions(require(packageJsonPath), packageJson);
-	} else {
+	if (!fs.existsSync(packageJsonPath)) {
 		fs.writeFileSync(packageJsonPath, JSON.stringify(packageJson, null, 2));
 	}
 

@@ -1,5 +1,5 @@
 {
-  "name": "@my/cli",
+  "name": "@holo/cli",
   "version": "1.0.0",
   "description": "cli for cli",
   "main": "index.js",
@@ -7,15 +7,18 @@
     "type": "git",
     "url": "git+https://github.com/Floribunda1/my-cli.git"
   },
+  "bin": {
+    "holo": "bin/holo.js"
+  },
   "keywords": [
     "cli"
   ],
   "license": "MIT",
   "dependencies": {
-    "@my/cli-plugin-commitlint": "^1.0.0",
-    "@my/cli-plugin-eslint": "^1.0.0",
-    "@my/cli-plugin-webpack": "^1.0.0",
-    "@my/utils": "^1.0.0",
+    "@holo/cli-plugin-commitlint": "^1.0.0",
+    "@holo/cli-plugin-eslint": "^1.0.0",
+    "@holo/cli-plugin-webpack": "^1.0.0",
+    "@holo/utils": "^1.0.0",
     "chalk": "^4.1.0",
     "ejs": "^3.1.6",
     "execa": "^5.0.0",

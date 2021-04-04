@@ -1,9 +1,9 @@
 {
-  "name": "my-cli",
+  "name": "holo-cli",
   "version": "1.0.0",
   "private": true,
   "workspaces": [
-    "packages/@my/*"
+    "packages/@holo/*"
   ],
   "scripts": {
   },

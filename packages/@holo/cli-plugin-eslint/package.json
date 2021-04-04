@@ -1,7 +1,7 @@
 {
-  "name": "@my/cli-plugin-commitlint",
+  "name": "@holo/cli-plugin-eslint",
   "version": "1.0.0",
-  "description": "commitlint plugin for cli",
+  "description": "eslint plugin for cli",
   "main": "index.js",
   "repository": {
     "type": "git",

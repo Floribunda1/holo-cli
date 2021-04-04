@@ -1,6 +1,6 @@
 {
   "packages": [
-    "packages/@my/*"
+    "packages/@holo/*"
   ],
   "version": "1.0.0",
   "useWorkspaces": true,

@@ -1,5 +1,5 @@
 {
-  "name": "@my/cli-plugin-babel",
+  "name": "@holo/cli-plugin-babel",
   "version": "1.0.0",
   "description": "babel plugin for cli",
   "main": "index.js",
