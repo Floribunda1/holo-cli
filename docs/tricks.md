@@ -1,4 +1,4 @@
-## 一些其中的细节
+## some tricks
 
 ### 怎么获取函数的调用位置？
 
@@ -7,14 +7,14 @@
 ```javascript
 // plugin
 module.exports = (api) => {
-  api.injectFile('./template', data);
+	api.injectFile('./template', data);
 };
 
 // generator.js
 function injectFile(path, data) {
-  const fileContent = fs.readFileSync(path);
-  const content = ejs.render(fileContent);
-  return content;
+	const fileContent = fs.readFileSync(path);
+	const content = ejs.render(fileContent);
+	return content;
 }
 ```
 
@@ -26,8 +26,8 @@ function injectFile(path, data) {
 
 ```javascript
 function getCallStack() {
-  const obj = {};
-  Error.captureStackTrace(obj);
-  console.log(obj.stack);
+	const obj = {};
+	Error.captureStackTrace(obj);
+	console.log(obj.stack);
 }
 ```

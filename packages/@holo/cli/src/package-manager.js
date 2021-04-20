@@ -1,4 +1,3 @@
-const execa = require('execa');
 const executeCommand = require('./utils/execute-command');
 
 const toolCommands = {
