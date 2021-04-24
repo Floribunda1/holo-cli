@@ -3,6 +3,7 @@ const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const WebpackBar = require('webpackbar');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 const resolve = p => path.resolve(__dirname, p);
 
@@ -17,7 +18,7 @@ const webpackConfig = {
 		rules: [
 			{
 				test: /\.css$/,
-				use: ['style-loader', 'css-loader'],
+				use: [MiniCssExtractPlugin.loader, 'css-loader'],
 			},
 			<%_ if (hasBabel) { -%>
 			{
@@ -35,6 +36,9 @@ const webpackConfig = {
 		}),
 		new CleanWebpackPlugin(),
 		new WebpackBar(),
+		new MiniCssExtractPlugin({
+			filename: '[name].[contenthash:8].css'
+		})
 	],
 };
 

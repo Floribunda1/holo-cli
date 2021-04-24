@@ -80,8 +80,8 @@ const createProject = async (name) => {
 	// clearConsole()
 
 	console.log('依赖下载完成');
-	console.log(`  cd ${chalk.cyan(name)}`);
-	console.log(`  ${chalk.cyan(answers.packageManager)} run dev`);
+	console.log(`$ cd ${chalk.cyan(name)}`);
+	console.log(`$ ${chalk.cyan(answers.packageManager)} run dev`);
 };
 
 const getInternalModules = () => {

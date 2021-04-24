@@ -10,7 +10,7 @@ module.exports = (api, { features }) => {
 		'html-webpack-plugin': 'latest',
 		'clean-webpack-plugin': 'latest',
 		'css-loader': 'latest',
-		'style-loader': 'latest',
+		'mini-css-extract-plugin': 'latest',
 		'webpack-merge': 'latest',
 		webpackbar: 'latest',
 		'webpack-bundle-analyzer': 'latest',
