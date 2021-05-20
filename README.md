@@ -26,6 +26,7 @@ holo create <project>
 - [x] webpack 插件
 - [x] commitlint 插件
 - [x] babel 插件
+- [x] typescript 插件
 
 #### TODO
 
@@ -36,4 +37,3 @@ holo create <project>
 插件
 
 - [ ] 支持不同的 packer（如 vite, rollup）
-- [ ] 支持 typescript

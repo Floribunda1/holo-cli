@@ -46,6 +46,7 @@ const webpackConfig = {
 		new HtmlWebpackPlugin({
 			title: 'My App',
 			template: resolve('../public/index.html'),
+			favicon: resolve('../public/favicon.svg')
 		}),
 		new CleanWebpackPlugin(),
 		new WebpackBar(),
