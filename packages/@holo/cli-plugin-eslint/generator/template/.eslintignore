@@ -1,1 +1,4 @@
 build/*
+<%_ if (hasTypescript) { -%>
+commitlint.config.js
+<%_ } _%>

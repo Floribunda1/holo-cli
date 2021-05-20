@@ -1,6 +1,10 @@
 {
   "parserOptions": {
-    <%_ if (hasBabel) { -%>
+    <%_ if (hasTypescript) { -%>
+    "parser": "@typescript-eslint/parser",
+		"project": "./tsconfig.json",
+    <%_ } _%>
+    <%_ if (hasBabel && !hasTypescript) { -%>
     "parser": "@babel/eslint-parser",
     <%_ } _%>
     "sourceType": "module",
@@ -11,7 +15,7 @@
     "es2021": true
   },
   "extends": [<%_ if (lintRule !== 'none') { _%>
-<%- JSON.stringify(lintRule) _%>
+<%- JSON.stringify(ruleName) _%>
     <%_ } _%>
     <%_ if (lintWithPrettier) { _%>
 , "prettier"<%_ } _%>]

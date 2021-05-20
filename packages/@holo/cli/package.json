@@ -17,6 +17,7 @@
   "dependencies": {
     "@holo/cli-plugin-commitlint": "^1.0.0",
     "@holo/cli-plugin-eslint": "^1.0.0",
+    "@holo/cli-plugin-typescript": "^1.0.0",
     "@holo/cli-plugin-webpack": "^1.0.0",
     "@holo/utils": "^1.0.0",
     "chalk": "^4.1.0",

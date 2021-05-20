@@ -13,7 +13,17 @@ module.exports = (api) => {
 		name: 'lintRule',
 		message: '请选择代码风格',
 		choices: ['airbnb', 'standard', 'none'],
-		when: ({ features }) => features.includes('eslint'),
+		when: ({ features }) =>
+			features.includes('eslint') && !features.includes('typescript'),
+	});
+
+	api.injectPrompt({
+		type: 'list',
+		name: 'lintRule',
+		message: '请选择代码风格',
+		choices: ['airbnb', 'typescript-recommend', 'none'],
+		when: ({ features }) =>
+			features.includes('eslint') && features.includes('typescript'),
 	});
 
 	api.injectPrompt({

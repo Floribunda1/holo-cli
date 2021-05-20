@@ -10,7 +10,13 @@ const PromptInjector = require('./prompt-injector');
 const Generator = require('./generator');
 const PackageManager = require('./package-manager');
 
-const internalModules = ['babel', 'webpack', 'commitlint', 'eslint'];
+const internalModules = [
+	'babel',
+	'webpack',
+	'typescript',
+	'commitlint',
+	'eslint',
+];
 
 const createProject = async (name) => {
 	const targetDirectory = path.join(process.cwd(), name);

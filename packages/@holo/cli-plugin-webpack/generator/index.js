@@ -1,7 +1,14 @@
 module.exports = (api, { features }) => {
-	let hasBabel = features.includes('babel');
+	const hasBabel = features.includes('babel');
+	const hasTypescript = features.includes('typescript');
 
-	api.injectFile('./template', { hasBabel });
+	api.injectFile('./base', { hasBabel, hasTypescript });
+
+	if (hasTypescript) {
+		api.injectFile('./ts');
+	} else {
+		api.injectFile('./js');
+	}
 
 	const devDependencies = {
 		webpack: 'latest',
@@ -20,11 +27,15 @@ module.exports = (api, { features }) => {
 		devDependencies['babel-loader'] = 'latest';
 	}
 
+	if (hasTypescript) {
+		devDependencies['ts-loader'] = 'latest';
+	}
+
 	api.extendPackage({
 		devDependencies: devDependencies,
 		scripts: {
 			build: 'webpack build --config build/prod.config.js',
-			dev: 'webpack serve --config build/dev.config.js --open',
+			dev: 'webpack serve --config build/dev.config.js',
 		},
 	});
 };
