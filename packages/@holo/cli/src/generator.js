@@ -11,6 +11,7 @@ class Generator {
 		this.context = directory;
 		this.files = {};
 		this.fileInjectFunctions = [];
+		this.readme = 'project auto-created by holo-cli\n';
 		this.context = path.join(process.cwd(), this.pkg.name);
 	}
 
@@ -43,6 +44,7 @@ class Generator {
 			await func();
 		}
 		this.files['package.json'] = JSON.stringify(this.pkg, null, 2) + '\n';
+		this.files['README.md'] = this.readme;
 		try {
 			// 创建项目文件夹
 			fs.mkdirSync(this.pkg.name);
