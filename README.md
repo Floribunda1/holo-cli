@@ -33,6 +33,7 @@ holo create <project>
 功能
 
 - [ ] 支持通过 `add` 的方式去添加插件
+- [ ]  webpack 环境下的 dev 环境的 eslint 检查和 typescript 检查
 
 插件
 

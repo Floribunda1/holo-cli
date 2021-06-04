@@ -21,6 +21,7 @@ module.exports = (api, { features }) => {
 		'webpack-merge': 'latest',
 		webpackbar: 'latest',
 		'webpack-bundle-analyzer': 'latest',
+		'node-polyfill-webpack-plugin': 'latest',
 	};
 
 	if (hasBabel) {

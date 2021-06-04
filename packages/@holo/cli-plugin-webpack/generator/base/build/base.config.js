@@ -4,6 +4,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const WebpackBar = require('webpackbar');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const NodePolyfillPlugin = require('node-polyfill-webpack-plugin');
 
 const resolve = p => path.resolve(__dirname, p);
 
@@ -52,7 +53,8 @@ const webpackConfig = {
 		new WebpackBar(),
 		new MiniCssExtractPlugin({
 			filename: '[name].[contenthash:8].css'
-		})
+		}),
+		new NodePolyfillPlugin()
 	],
 };
 
