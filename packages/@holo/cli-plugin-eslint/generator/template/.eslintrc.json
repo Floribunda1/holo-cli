@@ -16,7 +16,7 @@
   },
   "extends": [<%_ if (lintRule !== 'none') { _%>
 <%- JSON.stringify(ruleName) _%>
-    <%_ } _%>
+    <%_ }, _%>
     <%_ if (lintWithPrettier) { _%>
-, "prettier"<%_ } _%>]
+"prettier"<%_ } _%>]
 }
